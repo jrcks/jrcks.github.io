@@ -149,6 +149,12 @@ submitButton.addEventListener('click', function(e) {
     setTimeout(() => ripple.remove(), 600);
 });
 
+// Add the domain to the _next input dynamically
+document.addEventListener('DOMContentLoaded', function () {
+    const nextInput = document.querySelector('input[name="_next"]');
+    nextInput.value = window.location.origin + '/thank-you.html';
+});
+
 form.addEventListener('submit', function(e) {
     // Form will be handled by FormSubmit.co
     // We don't need to prevent default or handle the submission ourselves
