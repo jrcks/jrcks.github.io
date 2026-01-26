@@ -1,100 +1,801 @@
 <!DOCTYPE html>
-<html lang="de">
+<html class="dark" lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ Julian Rocks - Osnabrück</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-</head>
-<body>
-    <nav>
-        <div class="logo">Julian Rocks</div>
-        <button class="burger-menu" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="menu">
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <div class="social-icons">
-                <a href="https://instagram.com/julian_rcks" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://wa.me/+491736965717" target="_blank" class="social-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="content-wrapper">
-        <header class="hero">
-            <div id="vanta-background"></div>
-            <div class="hero-content">
-                <!-- <h1>Julian Rocks</h1> -->
-                <!-- <p>DJ from Osnabrück</p> -->
-                <img src="images/logo.svg" alt="Julian Rocks Logo" class="hero-logo">
-            </div>
-            <div class="scroll-indicator">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </header>
-
-    <section id="about" class="section" data-aos="fade-up">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <img data-src="images/profile.png" alt="DJ Julian Rocks" class="lazy">
-            </div>
-            <div class="about-text">
-                <p>Julian Rocks is a 24-year-old DJ based in Osnabrück and student at the University of Osnabrück. Since starting during the corona years he has performed at numerous weddings, company events, birthdays and clubs. Specializing in house and electronic music but open to all requests, he offers a full service with professional equipment and creates the right atmosphere for any occasion.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section" data-aos="fade-up">
-        <h2>Contact</h2>
-        <form id="contact-form" class="contact-form" action="https://formsubmit.co/4a22626acb15d4d84604351fa569f632" method="POST">
-            <!-- FormSubmit Configuration -->
-            <input type="hidden" name="_subject" value="New booking inquiry from website!">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="./thank-you.html">
-            
-            <div class="form-group">
-                <input type="text" id="name" name="name" required placeholder="Your Name">
-            </div>
-            <div class="form-group">
-                <input type="email" id="email" name="email" required placeholder="Your Email">
-            </div>
-            <div class="form-group">
-                <textarea id="message" name="message" required placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    </div>
+    <!-- ============================================
+             META TAGS & SEO
+             ============================================ -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"
+        content="Julian Rocks - Exklusiver Sound und perfekte Atmosphäre für Ihre unvergesslichen Events. Hochzeiten, Corporate Events, Clubs &amp; Privatfeiern." />
+    <meta name="keywords"
+        content="DJ, Event DJ, Wedding DJ, DJ Bramsche, DJ Osnabrück, DJ Vechta, Hochzeit DJ, Corporate Event" />
+    <meta name="author" content="Julian Rocks" />
+    <meta name="theme-color" content="#5444e4" />
+    <meta property="og:title" content="Julian Rocks | Dein Sound für unvergessliche Momente" />
+    <meta property="og:description" content="Exklusiver Sound für Hochzeiten, Corporate Events und Clubs" />
+    <meta property="og:type" content="website" />
     
-    <footer>
-        <p>&copy; 2025 Julian Rocks. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="legal.html">Impressum</a>
-            <a href="legal.html#datenschutz">Datenschutz</a>
+    <title>Julian Rocks | Dein Sound für unvergessliche Momente</title>
+    
+    <!-- ============================================
+             STYLESHEETS & FONTS
+             ============================================ -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+<!-- ============================================
+         TAILWIND CONFIGURATION
+         ============================================ -->
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#5444e4",
+                    "primary-light": "#7c6ff0",
+                    "background-light": "#f6f6f8",
+                    "background-dark": "#0a0a0a",
+                    "card-dark": "rgba(255, 255, 255, 0.05)",
+                },
+                fontFamily: {
+                    "display": ["Inter"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+                },
+                animation: {
+                    'fade-in': 'fadeIn 0.6s ease-in-out',
+                },
+                keyframes: {
+                    fadeIn: {
+                        '0%': { opacity: '0', transform: 'translateY(20px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' },
+                    }
+                }
+            },
+        },
+    }
+</script>
+</head>
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-x-hidden relative min-h-screen flex flex-col">
+    <!-- ============================================
+         BACKGROUND BLOB DECORATIONS
+         ============================================ -->
+    <div class="blob top-[-200px] left-[-200px] opacity-80"></div>
+    <div
+        class="blob top-[20%] right-[-300px] bg-[radial-gradient(circle,_rgba(124,111,240,0.12)_0%,_rgba(0,0,0,0)_70%)]">
+    </div>
+    <div class="blob top-[45%] left-[-400px]"></div>
+    <div class="blob bottom-[20%] right-[-200px]"></div>
+    <div class="blob bottom-[-400px] left-[20%] w-[1000px] h-[1000px] opacity-40"></div>
+
+    <!-- ============================================
+         LIGHTBOX GALLERY OVERLAY
+         ============================================ -->
+    <div id="lightbox">
+        <div id="lightbox-container">
+            <!-- Close Button -->
+            <button id="lightbox-close" onmouseover="this.style.color='white'"
+                onmouseout="this.style.color='rgba(255,255,255,0.7)'">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+<!-- Image Container -->
+<img id="lightbox-image" src="" alt="Full screen gallery image" />
+
+<!-- Navigation Arrows -->
+<button id="lightbox-prev" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
+    <span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button id="lightbox-next" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
+    <span class="material-symbols-outlined">chevron_right</span>
+</button>
+
+<!-- Image Counter -->
+<div id="lightbox-counter"></div>
+</div>
+</div>
+
+<!-- ============================================
+         HEADER & NAVIGATION
+         ============================================ -->
+<header class="fixed top-0 left-0 right-0 z-20 transition-all duration-300 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav
+            class="flex items-center justify-between h-14 rounded-full mt-4 px-6 border border-white/5 shadow-sm transition-all duration-300 hover:bg-black/30 py-2 bg-black/20 backdrop-blur-md">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <div class="size-5 text-primary">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                    </svg>
+                </div>
+                <span class="text-sm font-black tracking-tighter uppercase">JULIAN <span
+                        class="text-primary">ROCKS</span></span>
+                </a>
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex items-center gap-6">
+    <a class="nav-link text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+        href="#home">Home</a>
+    <a class="nav-link text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+        href="#about">Über mich</a>
+    <a class="nav-link text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+        href="#services">Leistungen</a>
+    <a class="nav-link text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+        href="#media">Media</a>
+    <a class="nav-link text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+        href="#contact">Kontakt</a>
+</div>
+
+<!-- CTA Button -->
+<a class="btn-primary hidden sm:flex items-center justify-center rounded-full h-7 px-4 bg-white/5 text-white text-[10px] font-bold uppercase tracking-widest border border-white/10 transition-transform hover:bg-primary hover:border-primary hover:scale-105 active:scale-95"
+    href="#contact">
+    Anfragen
+</a>
+
+<!-- Mobile Menu Toggle Button -->
+<button aria-label="Mobile Menu" aria-expanded="false"
+    class="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors" data-mobile-menu-button>
+    <span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+
+<!-- Mobile Menu (Hidden by default) -->
+<div class="mobile-menu md:hidden" data-mobile-menu>
+    <div class="flex flex-col gap-4 px-6 py-4">
+        <a class="text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+            href="#home">Home</a>
+        <a class="text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+            href="#about">Über mich</a>
+        <a class="text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+            href="#services">Leistungen</a>
+        <a class="text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+            href="#media">Media</a>
+        <a class="text-[11px] font-medium text-slate-400 hover:text-white transition-colors uppercase tracking-widest"
+            href="#contact">Kontakt</a>
+        <a class="mt-2 text-center bg-primary text-white py-2 rounded-lg font-bold text-[10px] hover:bg-primary/90 transition-all"
+            href="#contact">Anfragen</a>
+    </div>
+</div>
+</div>
+</header>
+
+<!-- ============================================
+         HERO SECTION
+         ============================================ -->
+<section class="relative h-screen flex items-center overflow-hidden" id="home">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
+        <div class="h-full w-full bg-cover bg-center bg-skeleton relative"
+            data-alt="Atmospheric photo of a professional DJ booth at night" data-bg="./images/hero-dj-booth.jpg">
+            <!-- Fade out overlay für das Bild -->
+            <div
+                class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent via-black/20 to-background-dark pointer-events-none">
+            </div>
+        </div>
+    </div>
+    <div class="relative z-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="max-w-2xl">
+            <!-- Hero Badge -->
+            <span
+                class="inline-block px-4 py-1.5 mb-8 text-xs font-bold tracking-[0.2em] text-primary-light uppercase border border-primary/30 rounded-full bg-primary/10 backdrop-blur-sm">Noch
+                Termine für 2026 frei</span>
+
+            <!-- Hero Heading -->
+            <h1
+                class="text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8 break-words">
+                DEIN EVENT.<br />
+                <span
+                    class="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent font-black">DEIN
+                    SOUND.</span><br />
+                UNVERGESSLICH.
+            </h1>
+
+            <!-- Hero Subheading -->
+            <p class="text-slate-300 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-lg">
+                Exklusiver Sound und perfekte Atmosphäre für anspruchsvolle Events.
+            </p>
+
+            <!-- Hero CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center gap-5">
+                <a class="btn-primary w-full sm:w-auto flex items-center justify-center rounded-lg h-14 px-10 bg-primary text-white text-base font-bold tracking-wide transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(84,68,228,0.4)]"
+                    href="#contact">
+                    UNVERBINDLICH ANFRAGEN
+                </a>
+                <a class="btn-primary w-full sm:w-auto flex items-center justify-center rounded-lg h-14 px-10 glass border border-primary/20 bg-primary/5 text-white text-base font-bold tracking-wide hover:bg-primary/10 transition-all gap-2"
+                    href="#media">
+                    <span>🎧</span> MIXE HÖREN
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 relative z-10" id="about">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <!-- About Image -->
+            <div class="relative">
+                <div class="absolute -inset-4 bg-primary/20 rounded-xl blur-2xl"></div>
+                <div class="relative bg-center bg-no-repeat aspect-[4/5] bg-cover bg-skeleton rounded-xl shadow-2xl"
+                    data-alt="Portrait of a smiling professional DJ with headphones"
+                    data-bg="./images/about-dj-portrait.jpg"></div>
+            </div>
+
+            <!-- About Content -->
+            <div class="flex flex-col gap-10">
+                <div>
+                    <h2 class="text-primary text-sm font-bold tracking-[0.2em] uppercase mb-4">The Person behind the
+                        decks</h2>
+                    <h3 class="text-white text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-8">
+                        Erfahrung, die man hört und fühlt.
+                    </h3>
+                    <p class="text-[#a19eb7] text-lg leading-relaxed mb-10">
+                        Musik ist mehr als nur Hintergrundgeräusch - sie ist das Herzstück jeder Veranstaltung. Mit
+                        über 7 Jahren Erfahrung auf verschiedenen Bühnen habe ich das Gespür dafür entwickelt, genau
+                        im richtigen Moment den richtigen Track zu spielen. Egal ob dezente Dinner-Musik oder eine
+                        ekstatische Tanzfläche um 3 Uhr morgens.
+                    </p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="glass border border-primary/20 bg-primary/5 flex flex-col gap-2 rounded-xl p-6">
+                        <p class="text-slate-400 text-sm font-medium uppercase tracking-wider">Erfahrung</p>
+                        <p class="text-white tracking-tighter text-3xl font-black">7+</p>
+                        <p class="text-primary text-xs font-bold uppercase">Jahre</p>
+                    </div>
+                    <div class="glass border border-primary/20 bg-primary/5 flex flex-col gap-2 rounded-xl p-6">
+                        <p class="text-slate-400 text-sm font-medium uppercase tracking-wider">Events</p>
+                        <p class="text-white tracking-tighter text-3xl font-black">150+</p>
+                        <p class="text-primary text-xs font-bold uppercase">Performances</p>
+                    </div>
+                    <div class="glass border border-primary/20 bg-primary/5 flex flex-col gap-2 rounded-xl p-6">
+                        <p class="text-slate-400 text-sm font-medium uppercase tracking-wider">Happy clients</p>
+                        <p class="text-white tracking-tighter text-3xl font-black">50+</p>
+                        <p class="text-primary text-xs font-bold uppercase">Referenzen</p>
+                    </div>
+                </div>
+
+                <!-- CTA Link -->
+                <div>
+                    <a class="inline-flex items-center gap-2 text-white font-bold hover:text-primary transition-colors group"
+                        href="#services">
+                        Meine Leistungen entdecken
+                        <span
+                            class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+         SERVICES SECTION
+         ============================================ -->
+<section class="py-20 bg-white/0 relative z-10" id="services">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="flex flex-col items-center text-center mb-16">
+            <div class="max-w-2xl">
+                <h2 class="text-primary text-sm font-bold tracking-[0.2em] uppercase mb-4 text-center">Leistungen
+                </h2>
+                <h3 class="text-white text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-4 text-center">
+                    Exzellenz für jeden Anlass
+                </h3>
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Service Card: Weddings -->
+            <div
+                class="group relative overflow-hidden rounded-2xl aspect-[3/4] glass border border-primary/20 bg-primary/5 cursor-pointer transition-all duration-500 hover:-translate-y-2">
+                <div class="absolute inset-0 bg-cover bg-center bg-skeleton transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Elegant wedding reception with dancing people" data-bg="./images/service-wedding.jpg">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary/80 to-background-dark/90 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent pointer-events-none">
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                    <span class="material-symbols-outlined text-white text-4xl mb-4 p-2 rounded-lg">favorite</span>
+                    <h4 class="text-white text-2xl font-bold mb-2">Hochzeiten</h4>
+                    <p
+                        class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                        Vom romantischen Einzug bis zur legendären Party-Nacht. Alles für den schönsten Tag.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service Card: Corporate -->
+            <div
+                class="group relative overflow-hidden rounded-2xl aspect-[3/4] glass border border-primary/20 bg-primary/5 cursor-pointer transition-all duration-500 hover:-translate-y-2">
+                <div class="absolute inset-0 bg-cover bg-center bg-skeleton transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Modern corporate gala event with blue lighting" data-bg="./images/service-corporate.jpg">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary/80 to-background-dark/90 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent pointer-events-none">
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                    <span
+                        class="material-symbols-outlined text-white text-4xl mb-4 p-2 rounded-lg">business_center</span>
+                    <h4 class="text-white text-2xl font-bold mb-2">Corporate Events</h4>
+                    <p
+                        class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                        Professionelle Begleitung für Firmenevents, Galas und Produktlaunches.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service Card: Clubs & Parties -->
+            <div
+                class="group relative overflow-hidden rounded-2xl aspect-[3/4] glass border border-primary/20 bg-primary/5 cursor-pointer transition-all duration-500 hover:-translate-y-2">
+                <div class="absolute inset-0 bg-cover bg-center bg-skeleton transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Energetic night club atmosphere with neon lights" data-bg="./images/service-clubs.jpg">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary/80 to-background-dark/90 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent pointer-events-none">
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                    <span class="material-symbols-outlined text-white text-4xl mb-4 p-2 rounded-lg">nightlife</span>
+                    <h4 class="text-white text-2xl font-bold mb-2">Clubs &amp; Private</h4>
+                    <p
+                        class="text-slate-200 text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                        Maximale Energie und moderne Beats für Clubs und exklusive Privatpartys.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Brochure Link -->
+        <div class="mt-8 flex justify-center">
+            <a class="group inline-flex items-center gap-3 text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                href="#">
+                <span
+                    class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">download</span>
+                <span class="tracking-wide">Broschüre herunterladen (PDF)</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+         MEDIA / GALLERY SECTION
+         ============================================ -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 relative z-10" id="media">
+    <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="mb-12 text-center">
+            <h2 class="text-primary text-sm font-bold tracking-[0.2em] uppercase mb-4 text-center">Media Gallery
+            </h2>
+            <h3 class="text-white text-4xl md:text-5xl font-bold tracking-tight leading-tight text-center">Hörproben
+                &amp; Impressionen</h3>
+        </div>
+
+        <!-- Media Content Grid -->
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Soundcloud Player Sidebar -->
+            <div class="lg:w-1/3">
+                <div class="sticky top-28 space-y-8">
+                    <!-- Soundcloud Embed -->
+                    <div class="rounded-2xl glass-strong p-1 overflow-hidden shadow-2xl">
+                        <div class="w-full bg-[#1e1e24] rounded-xl overflow-hidden">
+                            <iframe allow="autoplay" frameborder="no" height="350" scrolling="no"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2156754026%3Fsecret_token%3Ds-QramuMktyDI&amp;color=%235444e4&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
+                                width="100%"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Info Card -->
+                    <div class="p-6 rounded-2xl glass border border-primary/20 bg-primary/5">
+                        <h4 class="text-white font-bold mb-2">Live Sets &amp; Mixtapes</h4>
+                        <p class="text-slate-400 text-sm mb-4">Folge mir auf Soundcloud für die neuesten Mixes und
+                            Live-Mitschnitte aus den Clubs.</p>
+                        <a class="text-primary font-bold text-sm hover:text-white transition-colors flex items-center gap-1"
+                            href="https://soundcloud.com/julian-rocks" target="_blank" rel="noopener noreferrer">
+                            Zum Profil <span class="material-symbols-outlined text-lg">arrow_outward</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Photo Gallery Grid -->
+                <div class="lg:w-2/3">
+                    <div class="columns-1 md:columns-2 gap-6 space-y-6">
+                        <!-- Gallery Image 1 -->
+                        <div class="rounded-xl overflow-hidden glass-strong group cursor-pointer break-inside-avoid gallery-item"
+                            data-index="0">
+                            <img alt="Close up of DJ hands on mixing console"
+                                class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-src="./images/gallery-dj-hands.jpg" />
+                        </div>
+                
+                        <!-- Gallery Image 2 -->
+                        <div class="rounded-xl overflow-hidden glass-strong group cursor-pointer break-inside-avoid h-[280px] gallery-item"
+                            data-index="1">
+                            <img alt="People dancing with glow sticks at a party"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-src="./images/gallery-dancing-glow.jpg" />
+                        </div>
+                
+                        <!-- Gallery Image 3 -->
+                        <div class="rounded-xl overflow-hidden glass-strong group cursor-pointer break-inside-avoid h-[350px] gallery-item"
+                            data-index="2">
+                            <img alt="Balloons and disco lights decoration"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-src="./images/gallery-balloons-disco.jpg" />
+                        </div>
+                
+                        <!-- Gallery Image 4 -->
+                        <div class="rounded-xl overflow-hidden glass-strong group cursor-pointer break-inside-avoid h-[400px] gallery-item"
+                            data-index="3">
+                            <img alt="Professional turntable equipment"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-src="./images/gallery-turntable.jpg" />
+                        </div>
+                
+                        <!-- Gallery Image 5 -->
+                        <div class="rounded-xl overflow-hidden glass-strong group cursor-pointer break-inside-avoid gallery-item"
+                            data-index="4">
+                            <img alt="Crowd cheering at a live concert"
+                                class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-src="./images/gallery-crowd-concert.jpg" />
+                        </div>
+                
+                        <!-- Gallery Image 6 -->
+                        <div class="rounded-xl overflow-hidden glass-strong group cursor-pointer break-inside-avoid h-[300px] gallery-item"
+                            data-index="5">
+                            <img alt="Nightlife party lights blurry background"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-src="./images/gallery-nightlife-lights.jpg" />
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                
+                <!-- Lightbox Overlay -->
+                <div id="lightbox" class="hidden fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center">
+                    <div class="relative flex flex-col items-center justify-center gap-4 w-full h-full">
+                        <!-- Close Button -->
+                        <button id="lightbox-close"
+                            class="absolute top-6 right-6 z-[10000] text-white/70 hover:text-white transition-all hover:scale-110"
+                            style="background: none; border: none; cursor: pointer; padding: 8px;">
+                            <span class="material-symbols-outlined text-3xl">close</span>
+                        </button>
+                
+                        <!-- Image Container -->
+                        <img id="lightbox-image" src="" alt="Full screen gallery image"
+                            class="max-w-[90vw] max-h-[90vh] object-contain rounded-xl" />
+                
+                        <!-- Navigation Arrows -->
+                        <button id="lightbox-prev"
+                            class="absolute left-6 z-[10000] text-white/70 hover:text-white transition-all hover:scale-110"
+                            style="background: none; border: none; cursor: pointer; padding: 12px;">
+                            <span class="material-symbols-outlined text-4xl">chevron_left</span>
+                        </button>
+                        <button id="lightbox-next"
+                            class="absolute right-6 z-[10000] text-white/70 hover:text-white transition-all hover:scale-110"
+                            style="background: none; border: none; cursor: pointer; padding: 12px;">
+                            <span class="material-symbols-outlined text-4xl">chevron_right</span>
+                        </button>
+                
+                        <!-- Image Counter -->
+                        <div class="absolute bottom-6 bg-black/60 text-white px-4 py-2 rounded-full text-sm font-medium"
+                            id="lightbox-counter"></div>
+                    </div>
+                </div>
+                </section>
+                
+                <!-- ============================================
+                         TESTIMONIALS SECTION
+                         ============================================ -->
+                <section class="py-20 bg-white/0 overflow-hidden relative z-10">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <!-- Section Header -->
+                        <div class="text-center mb-16 flex flex-col items-center">
+                            <span class="material-symbols-outlined text-5xl text-primary mb-4">format_quote</span>
+                            <h3 class="text-white text-4xl md:text-5xl font-bold tracking-tight leading-tight">Das sagen meine
+                                Kunden</h3>
+                        </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div
+                    class="glass border border-primary/20 bg-primary/5 p-10 rounded-3xl relative flex flex-col items-start h-full hover:bg-primary/10 transition-all">
+                    <div class="flex items-start gap-4 w-full mb-6 z-10">
+                        <div class="size-14 rounded-full bg-slate-700 bg-skeleton bg-center bg-cover shrink-0"
+                            data-alt="Avatar of Sarah" data-bg="./images/testimonial-sarah.jpg"></div>
+                        <div class="flex flex-col">
+                            <p class="text-white font-bold text-lg">Sarah &amp; Michael</p>
+                            <p class="text-primary text-xs uppercase tracking-wide font-bold">Hochzeit</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-8 z-10 relative italic flex-grow">"Unsere
+                        Hochzeit war dank Julian Rocks einfach magisch. Er hat genau unseren Geschmack getroffen und die
+                        Tanzfläche war nie leer!"</p>
+                    <!-- Star Rating -->
+                    <div class="flex gap-1 text-yellow-500 mt-auto">
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div
+                    class="glass border border-primary/20 bg-primary/5 p-10 rounded-3xl relative flex flex-col items-start h-full hover:bg-primary/10 transition-all">
+                    <div class="flex items-start gap-4 w-full mb-6 z-10">
+                        <div class="size-14 rounded-full bg-slate-700 bg-skeleton bg-center bg-cover shrink-0"
+                            data-alt="Avatar of Thomas" data-bg="./images/testimonial-thomas.jpg"></div>
+                        <div class="flex flex-col">
+                            <p class="text-white font-bold text-lg">Thomas Weber</p>
+                            <p class="text-primary text-xs uppercase tracking-wide font-bold">Firmenfeier</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-8 z-10 relative italic flex-grow">"Herausragende
+                        Professionalität bei unserem Firmenjubiläum. Von der Hintergrundmusik bis zum Partyteil war
+                        alles perfekt abgestimmt."</p>
+                    <!-- Star Rating -->
+                    <div class="flex gap-1 text-yellow-500 mt-auto">
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">star</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+             CONTACT SECTION
+             ============================================ -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 relative z-10" id="contact">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+                <!-- Contact Information -->
+                <div class="pt-8">
+                    <h2 class="text-primary text-sm font-bold tracking-[0.2em] uppercase mb-4">Kontakt</h2>
+                    <h3 class="text-white text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6">
+                        LASS UNS DEIN EVENT <br /><span class="text-primary">PLANEN</span>.
+                    </h3>
+                    <p class="text-slate-400 text-lg mb-12 leading-relaxed max-w-md">
+                        Dein Event verdient den perfekten Soundtrack. Erzähle mir von deiner Vision - gemeinsam machen
+                        wir sie hörbar.
+                    </p>
+    
+                    <!-- Contact Details -->
+                    <div class="space-y-8 mb-12">
+                        <!-- Email -->
+                        <div class="flex items-center gap-5">
+                            <div
+                                class="size-12 rounded-xl bg-[#1a1a20] border border-white/5 flex items-center justify-center text-white shrink-0">
+                                <span class="material-symbols-outlined text-xl">mail</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Me</p>
+                                <p class="text-white font-medium text-lg">julian@dj-rocks.de</p>
+                            </div>
+                        </div>
+    
+                        <!-- Phone -->
+                        <div class="flex items-center gap-5">
+                            <div
+                                class="size-12 rounded-xl bg-[#1a1a20] border border-white/5 flex items-center justify-center text-white shrink-0">
+                                <span class="material-symbols-outlined text-xl">call</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Call Me</p>
+                                <p class="text-white font-medium text-lg">+49 (0) 173 6965717</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Social Media Links -->
+                    <div class="flex gap-4">
+                        <!-- Instagram -->
+                        <a class="size-10 rounded-full bg-[#1a1a20] border border-white/5 flex items-center justify-center hover:bg-gradient-to-br hover:from-purple-500 hover:via-pink-500 hover:to-orange-400 transition-all hover:border-pink-500"
+                            href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
+                            <svg class="w-5 h-5 text-slate-300 group-hover:text-white" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <title>Instagram</title>
+                                <path
+                                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+                            </svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a class="size-10 rounded-full bg-[#1a1a20] border border-white/5 flex items-center justify-center hover:bg-blue-600 transition-all hover:border-blue-500"
+                            href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
+                            <svg class="w-5 h-5 text-slate-300 hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <!-- SoundCloud -->
+                        <a class="size-10 rounded-full bg-[#1a1a20] border border-white/5 flex items-center justify-center hover:bg-orange-500 transition-all hover:border-orange-400"
+                            href="https://soundcloud.com" target="_blank" rel="noopener noreferrer" title="SoundCloud">
+                            <svg class="w-5 h-5 text-slate-300 hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <title>SoundCloud</title>
+                                <path
+                                    d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147.272.272 0 0 1-.542 0 27.955 27.955 0 0 1 0-7.147.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Contact Form -->
+                <div
+                    class="glass border border-primary/20 bg-primary/5 p-8 sm:p-10 rounded-3xl relative shadow-2xl backdrop-blur-xl">
+                    <form class="contact-form space-y-6" name="contactForm" novalidate
+                        action="https://formsubmit.co/4cefb599cc74af74ec4f2ed9472d41a1" method="POST">
+                        <!-- Name & Email Row -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Name Field -->
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-1"
+                                    for="name">Name <span class="text-red-500">*</span></label>
+                                <input id="name" name="name"
+                                    class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-600 focus:ring-1 focus:ring-primary focus:border-primary transition-all text-sm"
+                                    placeholder="Dein Name" type="text" required />
+                                <div class="input-error-message" data-field="name"></div>
+                            </div>
+    
+                            <!-- Email Field -->
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-1"
+                                    for="email">Email <span class="text-red-500">*</span></label>
+                                <input id="email" name="email"
+                                    class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-600 focus:ring-1 focus:ring-primary focus:border-primary transition-all text-sm"
+                                    placeholder="deine@email.com" type="email" required />
+                                <div class="input-error-message" data-field="email"></div>
+                            </div>
+                        </div>
+    
+                        <!-- Event Type & Date Row -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Event Type Dropdown -->
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-1"
+                                    for="event">
+                                    Event <span class="text-red-500">*</span>
+                                </label>
+    
+                                <div class="relative">
+                                    <select id="event" name="event" required class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg pl-4 pr-10 py-3.5 
+                       text-white focus:ring-1 focus:ring-primary focus:border-primary transition-all text-sm 
+                       appearance-none cursor-pointer
+                       invalid:text-slate-500 disabled:opacity-50">
+    
+                                        <option value="" disabled selected class="bg-slate-800 text-slate-400">Bitte
+                                            wählen...</option>
+                                        <option value="hochzeit" class="bg-[#0a0a0f] text-white">Hochzeit</option>
+                                        <option value="firmenfeier" class="bg-[#0a0a0f] text-white">Firmenfeier</option>
+                                        <option value="geburtstag" class="bg-[#0a0a0f] text-white">Geburtstag / Privat
+                                        </option>
+                                        <option value="club" class="bg-[#0a0a0f] text-white">Club / Festival</option>
+                                    </select>
+    
+                                    <!-- <div
+                                            class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-400">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </div> -->
+                                </div>
+    
+                                <div class="input-error-message" data-field="event"></div>
+                            </div>
+    
+                            <!-- Date Field -->
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-1"
+                                    for="date">Datum <span class="text-red-500">*</span></label>
+                                <div class="relative">
+                                    <input id="date" name="date"
+                                        class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-600 focus:ring-1 focus:ring-primary focus:border-primary transition-all text-sm"
+                                        placeholder="TT.MM.JJJJ" type="date" required />
+                                </div>
+                                <div class="input-error-message" data-field="date"></div>
+                            </div>
+                        </div>
+    
+                        <!-- Message Field -->
+                        <div class="space-y-2">
+                            <label class="text-[11px] font-bold uppercase tracking-widest text-slate-400 ml-1"
+                                for="message">Nachricht <span class="text-red-500">*</span></label>
+                            <textarea id="message" name="message"
+                                class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-600 focus:ring-1 focus:ring-primary focus:border-primary transition-all text-sm resize-none"
+                                placeholder="Details zum Event, Wünsche, Location..." rows="4" required></textarea>
+                            <div class="input-error-message" data-field="message"></div>
+                        </div>
+    
+                        <!-- Hidden Fields for FormSubmit.co -->
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Kontaktformular - DJ Anfrage">
+                        <input type="hidden" name="_replyto" value="">
+
+                        <!-- Submit Button -->
+                        <button
+                            class="btn-primary w-full bg-primary py-4 rounded-lg text-white font-bold text-sm tracking-widest uppercase hover:bg-primary/90 transition-all shadow-[0_4px_20px_rgba(84,68,228,0.3)] mt-2"
+                            type="submit">
+                            Unverbindlich Anfragen
+                        </button>
+                        </form>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+             FOOTER
+             ============================================ -->
+    <footer class="mt-auto py-8 border-t border-white/5 relative z-10 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-4">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 scale-110">
+                <div class="flex items-end gap-[3px] h-6 text-primary">
+                    <div class="w-1.5 h-3 bg-primary rounded-sm"></div>
+                    <div class="w-1.5 h-6 bg-primary rounded-sm"></div>
+                    <div class="w-1.5 h-4 bg-primary rounded-sm"></div>
+                </div>
+                <span class="text-xl font-black tracking-tighter uppercase text-white">JULIAN <span
+                        class="text-primary">ROCKS</span></span>
+            </div>
+    
+            <!-- Social Links -->
+            <div class="flex flex-wrap justify-center gap-6 sm:gap-8 text-sm font-medium text-slate-400">
+                <a class="hover:text-white transition-colors" href="https://instagram.com" target="_blank"
+                    rel="noopener noreferrer">Instagram</a>
+                <a class="hover:text-white transition-colors" href="https://soundcloud.com" target="_blank"
+                    rel="noopener noreferrer">SoundCloud</a>
+                <a class="hover:text-white transition-colors" href="https://spotify.com" target="_blank"
+                    rel="noopener noreferrer">Spotify</a>
+            </div>
+
+            <!-- Copyright & Legal Links -->
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-xs text-slate-600 mt-2">
+                <p>&copy; 2026 Julian Rocks. Alle Rechte vorbehalten.</p>
+                <span class="hidden sm:inline">|</span>
+                <a class="hover:text-slate-400 transition-colors" href="rechtliches.html">Impressum</a>
+                <span class="hidden sm:inline">|</span>
+                <a class="hover:text-slate-400 transition-colors" href="rechtliches.html#datenschutz">Datenschutz</a>
+            </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/smooth-scroll.js"></script>
+    <!-- ============================================
+             SCRIPTS
+             ============================================ -->
+    <script src="js/script.js" defer></script>
 </body>
+
 </html>

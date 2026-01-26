@@ -1,0 +1,22 @@
+# DJ Julian Rocks - Robots.txt
+# Allow search engines to crawl this site
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://dj-rocks.de/sitemap.xml
+
+# Crawl delay for other bots
+User-agent: *
+Crawl-delay: 1

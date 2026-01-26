@@ -1,0 +1,43 @@
+{
+  "name": "dj-julian-rocks-homepage",
+  "version": "1.0.0",
+  "description": "DJ Julian Rocks - Premium Event & Wedding DJ Homepage",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "serve": "npx http-server",
+    "build": "npm run lint && npm run test",
+    "lint": "eslint js/ --max-warnings 0",
+    "test": "echo 'Test suite not configured yet'",
+    "format": "prettier --write 'index.html' 'css/**/*.css' 'js/**/*.js'",
+    "validate": "npm run lint && npm run format"
+  },
+  "keywords": [
+    "dj",
+    "event-dj",
+    "wedding-dj",
+    "electronic-music",
+    "entertainment"
+  ],
+  "author": "Julian Rocks",
+  "license": "Proprietary",
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.1",
+    "http-server": "^14.1.1",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": "mailto:julian@dj-rocks.de"
+  },
+  "homepage": "https://dj-rocks.de"
+}
